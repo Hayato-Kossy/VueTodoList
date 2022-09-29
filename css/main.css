@@ -1,0 +1,12 @@
+#app ul {
+    list-style: none;
+}
+
+#app li > span.done{
+    text-decoration: line-through;
+    font-size: x-large;
+}
+
+#app li > span{
+    font-size: x-large;
+}

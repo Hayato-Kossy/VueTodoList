@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js 3</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<header></header>
+<body class="d-flex justify-content-center mt-3">
+
+    <div id="app">
+        <h2 class="m-3">TODO List</h2>
+        <form v-on:submit.prevent>
+            <input type="text" v-model="newItem">
+            <button v-on:click="addItem" class="m-3">Add</button>
+        </form>
+        <ul>
+            <li v-for="(todo, index) in todos">
+                <input type="checkbox" v-model="todo.isDone">
+                <span v-bind:class="{ done: todo.isDone }">{{ todo.item }}</span>
+                <button v-on:click="deleteItem(index)" class="m-3">Delete</button>
+            </li>
+        </ul>
+        <!-- <pre>{{ $data }}</pre> -->
+    </div>
+    <script src="https://unpkg.com/vue@3.1.5"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
